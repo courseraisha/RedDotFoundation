@@ -3,5 +3,5 @@ numpy
 pandas
 seaborn
 matplotlib
-plotly
+plotly_express==0.4.0
 scikit-learn
