@@ -10,9 +10,9 @@ st.title("RED DOT FOUNDATION - SURVEY ANALYSIS")
 st.sidebar.title("Language Selection")
 language = st.sidebar.selectbox("Select an option", ["HINDI FEEDBACK ANALYSIS", "ENGLISH FEEDBACK ANALYSIS"])
 if language == 'HINDI FEEDBACK ANALYSIS':
-    data = pd.read_excel('C:/Users/Admin/Desktop/RED DOT/HINDI.xlsx')
+    data = pd.read_excel('HINDI.xlsx')
 elif language == 'ENGLISH FEEDBACK ANALYSIS':
-    data = pd.read_excel('C:/Users/Admin/Desktop/RED DOT/EnglishFeedback.xlsx')
+    data = pd.read_excel('EnglishFeedback.xlsx')
 # Load the data based on the selected language
 
 def generate_respondents_plotsH(data, plot_type):
