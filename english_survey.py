@@ -348,7 +348,7 @@ elif language == 'MARATHI FEEDBACK ANALYSIS':
     
     elif analysis_type == 'Trainer':
         st.subheader("Trainer Analysis")
-        trainer = st.selectbox("Choose a trainer:", ['Jyoti Goyal', 'Pragati Vaishya', 'Ritu Verma', 'Sonali Alves', 'Kiran Saju', 'Monika Rajashekhar', 'Nisha Kumari', 'Shital Vidhate', 'Tehsin Shaikh', 'Vaibhavi Rani'])
+        trainer = st.selectbox("Choose a trainer:", ['Kambale madam','Mrinalini','Shital vidhate','Sacnin sir','Rani Panchal'])
         trainer_data = data[data['name of instructor'] == trainer]
         if not trainer_data.empty:
             generate_trainer_plotsM(trainer_data)
