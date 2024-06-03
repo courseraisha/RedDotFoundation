@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 
 # Set up the Streamlit page
 st.title(':red[_RED_ _DOT_ _FOUNDATION_]')
-st.sidebar.image("C:/Users/Admin/Desktop/Streamlit_dashboard/red_dot.jpg")  # Update with your actual image path
+st.sidebar.image("red_dot.jpg")  # Update with your actual image path
 
 with st.sidebar:
     selected = option_menu(
@@ -17,7 +17,7 @@ with st.sidebar:
 colors = ['rgb(55, 83, 109)', 'rgb(26, 118, 255)', 'rgb(144, 202, 249)']
 
 if selected == "Pre Session Analysis":
-    data = pd.read_excel("C:/Users/Admin/Desktop/Streamlit_dashboard/SafetyChampions1.xlsx")  # Update with your actual data path
+    data = pd.read_excel("SafetyChampions1.xlsx")  # Update with your actual data path
     
     with st.sidebar:
         selected_1 = option_menu(
@@ -176,7 +176,7 @@ if selected == "Pre Session Analysis":
             st.plotly_chart(fig, use_container_width=True, theme="streamlit")
 
 elif selected == "Post Session Analysis":
-    data = pd.read_excel("C:/Users/Admin/Desktop/Streamlit_dashboard/Feedback2021.xlsx")  # Update with your actual data path
+    data = pd.read_excel("Feedback2021.xlsx")  # Update with your actual data path
     st.header("POST SESSION ANALYSIS")
 
     with st.sidebar:
@@ -310,7 +310,7 @@ elif selected == "Post Session Analysis":
 
 elif selected =="Summary":
         st.header("SUMMARY")
-        data = pd.read_excel("C:/Users/Admin/Desktop/Streamlit_dashboard/Feedback2021.xlsx")  # Update with your actual data path
+        data = pd.read_excel("Feedback2021.xlsx")  # Update with your actual data path
         questions = [
             "Rate your knowlege prior",
             "Rate your knowledge post campaign",
