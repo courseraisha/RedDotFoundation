@@ -239,14 +239,14 @@ def generate_respondents_plotsM(data, plot_type):
 
     elif plot_type == 'Understanding Levels':
         understanding_columns = [
-            'I have a strong understanding of what disrespectful behavior and street harassment looks like.',
-            'I strongly understand the impact of abusive behavior and street harassment on people.',
-            'When I see street harassment, the 5Ds provides me with strategies to safely intervene.',
-            'I believe I will intervene if I see disrespect or harassment.',
-            'The next time I experience harassment, I feel more prepared to respond by taking care of myself in the moment or later.',
-            'The situation gave me an opportunity to practice applying the new strategies I learned today.',
-            'If I walk out here today and see harassment happening on the street, I think there is at least one thing I can do to intervene.',
-            'I would recommend this training to a friend or colleague.'
+            'I have a strong understanding of what disrespectful behavior and street harassment looks like',
+            'I strongly understand the impact of abusive behavior and street harassment on people',
+            'When I see street harassment, the 5Ds provides me with strategies to safely intervene',
+            'I believe I will intervene if I see disrespect or harassment',
+            'The next time I experience harassment, I feel more prepared to respond by taking care of myself in the moment or later',
+            'The situation gave me an opportunity to practice applying the new strategies I learned today',
+            'If I walk out here today and see harassment happening on the street, I think there is at least one thing I can do to intervene',
+            'I would recommend this training to a friend or colleague'
         ]
         for col in understanding_columns:
             understanding_counts = data[col].value_counts(normalize=True).reset_index()
@@ -258,10 +258,10 @@ def generate_respondents_plotsM(data, plot_type):
             st.plotly_chart(fig)
 
     elif plot_type == 'Instructor Evaluation':
-        knowledge_counts = data['The instructor was engaging and encouraged participation.'].value_counts(normalize=True).reset_index()
+        knowledge_counts = data['The instructor was engaging and encouraged participation'].value_counts(normalize=True).reset_index()
         knowledge_counts.columns = ['Engagement Level', 'percentage']
         knowledge_counts['percentage'] *= 100
-        engagement_counts = data['The instructor was knowledgeable and prepared.'].value_counts(normalize=True).reset_index()
+        engagement_counts = data['The instructor was knowledgeable and prepared'].value_counts(normalize=True).reset_index()
         engagement_counts.columns = ['Knowledge Level', 'percentage']
         engagement_counts['percentage'] *= 100
         fig_knowledge = px.bar(knowledge_counts, x='Knowledge Level', y='percentage', title='Instructor Knowledge Levels', color='Knowledge Level', text='percentage')
@@ -275,26 +275,26 @@ def generate_respondents_plotsM(data, plot_type):
 
 
 def generate_trainer_plotsM(trainer_data):
-    present_count = trainer_data['The presentation was easy to understand.'].value_counts(normalize=True).reset_index()
-    present_count.columns = ['The presentation was easy to understand.', 'percentage']
+    present_count = trainer_data['The presentation was easy to understand'].value_counts(normalize=True).reset_index()
+    present_count.columns = ['The presentation was easy to understand', 'percentage']
     present_count['percentage'] *= 100
-    fig = px.bar(present_count, x='The presentation was easy to understand.', y='percentage', title='Ease in Understanding the Presentation', color='The presentation was easy to understand.', text='percentage')
+    fig = px.bar(present_count, x='The presentation was easy to understand', y='percentage', title='Ease in Understanding the Presentation', color='The presentation was easy to understand', text='percentage')
     fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
     fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
     st.plotly_chart(fig)
 
-    knowledge_counts = trainer_data['The instructor was knowledgeable and prepared.'].value_counts(normalize=True).reset_index()
-    knowledge_counts.columns = ['The instructor was knowledgeable and prepared.', 'percentage']
+    knowledge_counts = trainer_data['The instructor was knowledgeable and prepared'].value_counts(normalize=True).reset_index()
+    knowledge_counts.columns = ['The instructor was knowledgeable and prepared', 'percentage']
     knowledge_counts['percentage'] *= 100
-    fig = px.bar(knowledge_counts, x='The instructor was knowledgeable and prepared.', y='percentage', title='Instructor Knowledge Levels', color='The instructor was knowledgeable and prepared.', text='percentage')
+    fig = px.bar(knowledge_counts, x='The instructor was knowledgeable and prepared', y='percentage', title='Instructor Knowledge Levels', color='The instructor was knowledgeable and prepared', text='percentage')
     fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
     fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
     st.plotly_chart(fig)
 
-    engagement_counts = trainer_data['The instructor was engaging and encouraged participation.'].value_counts(normalize=True).reset_index()
-    engagement_counts.columns = ['The instructor was engaging and encouraged participation.', 'percentage']
+    engagement_counts = trainer_data['The instructor was engaging and encouraged participation'].value_counts(normalize=True).reset_index()
+    engagement_counts.columns = ['The instructor was engaging and encouraged participation', 'percentage']
     engagement_counts['percentage'] *= 100
-    fig = px.bar(engagement_counts, x='The instructor was engaging and encouraged participation.', y='percentage', title='Instructor Engagement Levels', color='The instructor was engaging and encouraged participation.', text='percentage')
+    fig = px.bar(engagement_counts, x='The instructor was engaging and encouraged participation', y='percentage', title='Instructor Engagement Levels', color='The instructor was engaging and encouraged participation', text='percentage')
     fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
     fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
     st.plotly_chart(fig)
