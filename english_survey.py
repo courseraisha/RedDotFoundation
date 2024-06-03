@@ -258,11 +258,11 @@ def generate_respondents_plotsM(data, plot_type):
             st.plotly_chart(fig)
 
     elif plot_type == 'Instructor Evaluation':
-        knowledge_counts = data['The instructor was engaging and encouraged participation'].value_counts(normalize=True).reset_index()
-        knowledge_counts.columns = ['Engagement Level', 'percentage']
+        knowledge_counts = data['The instructor was knowledgeable and prepared'].value_counts(normalize=True).reset_index()
+        knowledge_counts.columns = ['Knowledge Level', 'percentage']
         knowledge_counts['percentage'] *= 100
-        engagement_counts = data['The instructor was knowledgeable and prepared'].value_counts(normalize=True).reset_index()
-        engagement_counts.columns = ['Knowledge Level', 'percentage']
+        engagement_counts = data['The instructor was engaging and encouraged participation'].value_counts(normalize=True).reset_index()
+        engagement_counts.columns = ['Engagement Level', 'percentage']
         engagement_counts['percentage'] *= 100
         fig_knowledge = px.bar(knowledge_counts, x='Knowledge Level', y='percentage', title='Instructor Knowledge Levels', color='Knowledge Level', text='percentage')
         fig_knowledge.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
