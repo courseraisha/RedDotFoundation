@@ -6,3 +6,4 @@ matplotlib
 plotly_express==0.4.0
 scikit-learn
 openpyxl
+streamlit_option_menu
