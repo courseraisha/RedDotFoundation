@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 # TITLE
 st.title("RED DOT FOUNDATION - SURVEY ANALYSIS")
 st.sidebar.title("Language Selection")
-language = st.sidebar.selectbox("Select an option", ["HINDI FEEDBACK ANALYSIS", "ENGLISH FEEDBACK ANALYSIS"])
+language = st.sidebar.selectbox("Select an option", ["HINDI FEEDBACK ANALYSIS", "ENGLISH FEEDBACK ANALYSIS","MARATHI FEEDBACK ANALYSIS"])
 
 if language == 'HINDI FEEDBACK ANALYSIS':
     data = pd.read_excel('HINDI.xlsx')
