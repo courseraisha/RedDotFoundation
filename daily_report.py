@@ -11,7 +11,7 @@ st.title(":orange[_SPAN COMMUNICATIONS_]")
 selected_option = st.sidebar.selectbox("Select an option", ["December Daily Report", "January Performance Leads"])
 
 if selected_option == "December Daily Report":
-    data = pd.read_excel("DEC_DAILY_REPORT.xlsx")
+    data = pd.read_excel("C:/Users/Admin/Desktop/SPAN COMMUNICATIONS/EXCEL FILES/DEC_DAILY_REPORT.xlsx")
     
     data['Date'] = pd.to_datetime(data['Date'], dayfirst=True)
     
@@ -32,12 +32,9 @@ if selected_option == "December Daily Report":
     st.plotly_chart(fig1, use_container_width=True)
     st.write("""
         **Analysis:**
-
-        - **Overall Trend**: Both Impressions and Clicks show a general upward trend throughout December, indicating increasing engagement.
-        - **Early December**: Initially there is a significant rise on 9 December.
-        - **Mid-December Fluctuations**: Variations between December 12 and December 21 could be due to different campaign intensities or user behavior.
-        - **Late December Increase**: Significant spike around December 24 to December 27, likely due to holiday season activities.
-        - **End-of-Month Decline**: Sharp decline after December 27 might be due to reduced online activity during the holiday break.
+             In December, both Impressions and Clicks showed an overall upward trend, with a notable increase on December 9, 
+             fluctuations from December 12 to 21, a significant spike around December 24 to 27 likely due to holiday activities, 
+             and a sharp decline after December 27 possibly due to reduced online activity during the holiday break
         """)
     
     # Multi-line graph for Leads and CPL
@@ -48,12 +45,9 @@ if selected_option == "December Daily Report":
     st.plotly_chart(fig2, use_container_width=True)
     st.write("""
         **Analysis:**
-
-        - **Overall Trend**: Both Leads and Cost Per Lead (CPL) show varying trends throughout December, reflecting changes in user engagement and campaign performance.
-        - **Early December**: There is a significant spike in both Leads and CPL around December 9 indicating the launch of a new campaign or promotional activity.
-        - **Mid-December Stability**: Relative stability with fluctuations between December 12 and December 23 suggests the maintenance phase of ongoing campaigns.
-        - **Late December Increase**: Noticeable increase in Leads around December 24 to December 27 likely corresponds to holiday season activities and promotions.
-        - **End-of-Month Decline**: Sharp decline towards the end of December after December 27 could be attributed to the winding down of holiday campaigns or reduced online activity.
+             In December, Leads and Cost Per Lead (CPL) showed varying trends. There was a spike around December 9, 
+             likely due to a new campaign. Stability with fluctuations between December 12 and 23 suggests ongoing campaigns. 
+             An increase in Leads around December 24 to 27 likely relates to holiday activities, followed by a decline, possibly due to campaign winding down or reduced online activity.
         """)
     
     # Scatter Plot of Leads (or Calls) vs Impressions
@@ -88,7 +82,7 @@ if selected_option == "December Daily Report":
    - CPL and Amount Spent (-0.040): Increasing budget doesn't guarantee lower cost per lead. 
 """)
 if selected_option == "January Performance Leads":
-    data = pd.read_excel("JAN_PERFORMANCE_LEADS.xlsx")
+    data = pd.read_excel("C:/Users/Admin/Desktop/SPAN COMMUNICATIONS/EXCEL FILES/JAN_PERFORMANCE_LEADS.xlsx")
     
     data['Date'] = pd.to_datetime(data['Date'], dayfirst=True)
     
@@ -109,11 +103,9 @@ if selected_option == "January Performance Leads":
     st.plotly_chart(fig1, use_container_width=True)
     st.write("""
         **Analysis:**
-
-        - **Overall Trend**: Both Impressions and Clicks shows fluctuations in the trend throughoutthe month.
-        - **Early January**: Initially there is a rise in the trend and then there is a short setback.
-        - **Mid-January Fluctuations**: There is a significant increase from 17 Jan until it reaches its peak on 20 Jan.
-        - **End-of-Month Decline**: Significant decline can be seen after 20 Jan, even after an increase in the Impressions there could not have been an increase in Clicks.
+             In January, Impressions and Clicks showed fluctuating trends. There was an initial rise, 
+             followed by a brief setback. A significant increase occurred from January 17, peaking on January 20, 
+             but there was a notable decline thereafter, despite an increase in Impressions, suggesting a discrepancy in Clicks.
         """)
     
     # Multi-line graph for Leads and CPL
@@ -124,11 +116,10 @@ if selected_option == "January Performance Leads":
     st.plotly_chart(fig2, use_container_width=True)
     st.write("""
         **Analysis:**
-
-        - **Overall Trend**: Both Leads and Cost Per Lead (CPL) show varying trends throughout January, reflecting changes in user engagement and campaign performance.
-        - **Early January**: There is a significant spike in both Leads and CPL around December 9 indicating the launch of a new campaign or promotional activity.
-        - **Mid-January Stability**: Relative stability in the CPL with fluctuations in the Leads.
-        - **End-of-Month Decline**: Sharp decline in the Leads towards the end of January after December 21 and high CPL .
+             In January, Leads and Cost Per Lead (CPL) showed varying trends, indicating changes in user engagement and campaign performance. 
+             There was a significant spike in both metrics around January 9, likely due to a new campaign, followed by relative stability in CPL 
+             with fluctuations in Leads. A sharp decline in Leads towards the end of January, after December 21, accompanied by high CPL, suggests 
+             a decline in campaign effectiveness.
         """)
     
     # Scatter Plot of Leads (or Calls) vs Impressions
@@ -166,5 +157,3 @@ if selected_option == "January Performance Leads":
 * **Impressions and CPL (-0.006), CPL and Amount Spent (-0.009):** Increasing budget doesn't guarantee lower or higher cost per lead. 
 * **CTR% and Amount Spent (-0.346):** More spending doesn't always result in higher click-through rate, indicating other factors at play.
 """)
-
-
