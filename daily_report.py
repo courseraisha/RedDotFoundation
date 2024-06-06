@@ -7,7 +7,7 @@ from scipy.stats import pearsonr
 st.set_page_config(layout="wide")
 
 st.title(":orange[_SPAN COMMUNICATIONS_]")
-st.hearder('iVOOMi', divider= 'blue')
+st.header('iVOOMi', divider= 'blue')
 st.sidebar.title('File Upload')
 uploaded_file = st.sidebar.file_uploader("Upload a CSV or Excel file", type=['csv', 'xlsx'])
 
